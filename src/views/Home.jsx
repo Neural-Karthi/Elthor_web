@@ -8,9 +8,9 @@ import Right_arrow from '../assets/Images/Right_arrow.svg'
 import { useSwipeable } from 'react-swipeable';
 
 import Bike_background_Studio_Plain from '../assets/Images/Bike_background_Studio_Plain.svg'
-import model_1 from '../assets/Images/model_1.svg'
-import model_2 from '../assets/Images/model_2.svg'
-import model_3 from '../assets/Images/model_3.svg'
+import model_1 from '../assets/Images/Model_1.svg'
+import model_2 from '../assets/Images/Model_2.svg'
+import model_3 from '../assets/Images/Model_3.svg'
 
 import Bike_model_card from '../Components/Bike_model_card.jsx'
 import Long_Banner from '../assets/Images/Long_Banner.svg'

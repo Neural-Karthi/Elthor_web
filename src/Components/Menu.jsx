@@ -31,7 +31,7 @@ const Menu = (props) => {
                 {chunkedBikes.map((group, i) => (
                   <div key={i} className="py-5 md:px-8 flex items-center gap-3">
                     {group.map((bike, j) => (
-                      <div key={j} className="w-1/3 flex flex-col items-center justify-center" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>
+                      <div key={j} className="w-1/3 flex flex-col items-center justify-center" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);props.handleToggle()}}>
                         <img
                            src={`${bike.src}?v=1.0`}
                           loading="lazy"
@@ -48,10 +48,10 @@ const Menu = (props) => {
                        <div className=" h-full ">
                           <h1 className="text-[15px] md:text-[14px] 2xl:text-lg text-[#A1A8AF] py-2 ">Elthor</h1>
                           <div className="text-sm flex flex-col gap-1 md:text-[14px] 2xl:text-lg text-[#000000]">
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor Bravo</h1>
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor Coral</h1>
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor H7</h1>
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor Mini Cooper</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);props.handleToggle()}}>Elthor Bravo</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);props.handleToggle()}}>Elthor Coral</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);props.handleToggle()}}>Elthor H7</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);props.handleToggle()}}>Elthor Mini Cooper</h1>
                           </div>
                       </div>
                      </div>

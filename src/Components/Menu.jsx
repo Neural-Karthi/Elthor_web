@@ -32,7 +32,7 @@ const Menu = (props) => {
                     {group.map((bike, j) => (
                       <div key={j} className="w-1/3 flex flex-col items-center justify-center">
                         <img
-                          src={bike.src}
+                           src={`${bike.src}?v=1.0`}
                           loading="lazy"
                           alt={`bike-${i}-${j}`}
                           className="hover:scale-105 transition duration-100 cursor-pointer"

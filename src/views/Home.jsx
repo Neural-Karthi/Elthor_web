@@ -20,7 +20,6 @@ import Ev_battery_Station from '../assets/Images/Ev_battery_Station.svg'
 import Mobile_app_ from '../assets/Images/Mobile_app_.svg'
 import Maintance_bike from '../assets/Images/Maintance_bike.svg'
 
-
 import Long_arrow from '../assets/Images/Long_arrow.svg'
 import Success_Image_1 from '../assets/Images/Success_Image_1.png'
 import Success_Image_2 from '../assets/Images/Success_Image_2.png'
@@ -29,6 +28,7 @@ import Success_Image_4 from '../assets/Images/Success_Image_4.png'
 import Get_Touch_banner from '../assets/Images/Get_Touch_banner.svg'
 import Get_Touch_banner_Mobile from '../assets/Images/Get_Touch_banner_Mobile.svg'
 import Login_Banner from '../assets/Images/Login_Banner.svg'
+import Battery_swapping_info from '../assets/Images/Battery_swapping_info.svg'
 
 import Menu from '../Components/Menu.jsx'
 import { useDispatch, useSelector } from 'react-redux';
@@ -36,11 +36,16 @@ import { setChangeToggle,selectMenuToggle  } from '../Redux/Slice/Menu_toggle.js
 import { setChangeSigninToggle,selectsignToggle  } from '../Redux/Slice/Login_toggle.js';
 
 import Grid_feature from '../Components/Grid_feature.jsx'
-
 import LoginCard from  '../Components/LoginCard.jsx'
 
 
+import Standand_Bike_1 from '../assets/Images/Standand_Bike_1.svg'
+import Standand_Bike_2 from '../assets/Images/Standand_Bike_2.svg'
+import Standand_Bike_3 from '../assets/Images/Standand_Bike_3.svg'
 
+import swappable_b1 from '../assets/Images/Swappable_b1.SVG'
+import swappable_b2 from '../assets/Images/Swappable_b2.SVG'
+import swappable_b3 from '../assets/Images/Swappable_b3.SVG'
 const Home = () => {
    
     const [Scrolling_position,set_Scrollingposition] = useState(0);
@@ -113,28 +118,51 @@ const Home = () => {
         setIsDragging(false); 
       };
 
+      const Swapping_Bike_models = [
+        {
+          Model_name:"Elthor VoltX ",
+          Model_description:"Energy that moves with you",
+          Model_price:"Begins at ₹1,54,999",
+          Model_price_2:"or Easy FlexiPay ₹5,185/month",
+          Model_image:swappable_b2
+        },
+        {
+          Model_name:"Elthor Pulse",
+          Model_description:"FNext-gen power exchange",
+          Model_price:"Begins at ₹1,54,999",
+          Model_price_2:"or Easy FlexiPay ₹5,185/month",
+          Model_image:swappable_b1
+        },
+        {
+          Model_name:"Elthor Dynamo",
+          Model_description:" Swap and surge.",
+          Model_price:"Begins at ₹1,54,999",
+          Model_price_2:"or Easy FlexiPay ₹5,185/month",
+          Model_image:swappable_b3
+        }
+      ]
 
       const Bike_models = [
         {
-          Model_name:"Elthor Bravo",
-          Model_description:"The style you envision and expect.",
+          Model_name:"Elthor Core",
+          Model_description:"Pure, solid performance.",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:model_1
+          Model_image:Standand_Bike_1
         },
         {
-          Model_name:"Elthor Coral",
-          Model_description:"Safe, Sturdy, Powerfull",
+          Model_name:"Elthor Drift",
+          Model_description:"Smooth rides, no stops.",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:model_2
+          Model_image:Standand_Bike_2
         },
         {
-          Model_name:"Elthor H7",
-          Model_description:"The style you envision and expect.",
+          Model_name:"Elthor Vibe ",
+          Model_description:"Charged for everyday rides",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:model_3
+          Model_image:Standand_Bike_3
         }
       ]
       
@@ -160,7 +188,6 @@ const Home = () => {
         }
       }, [isMenuOpen,isSignInOpen]);
     
-      
   return (
      <>
          <div className="w-full h-full select-none " >
@@ -192,13 +219,29 @@ const Home = () => {
             </div>
 
             {/* Section 2 - Elthor Swapping Information */}
-
+            <div className="text-center py-6 pt-16 md:pt-24 pb-5 px-4">
+               <div><h1 className="text-xl md:text-3xl font-semibold">Swap. Snap. Go.</h1></div>
+               <div className="py-2 md:py-3 md:w-[60%] lg:w-[45%] 2xl:w-[35%] text-center  mr-auto ml-auto text-[#606568] text-[14px] md:text-[18px] lg:text-lg"><h1>Elthor makes battery swapping effortless. Cleaner than fuel. Quicker than charging. Just swap and go — no lines, no delays, no emissions. Power that's ready when you are. Ride on without stopping.</h1></div>
+            </div>
+            <div className="flex items-center justify-center p-5 md:p-8 relative transition-transform duration-300 ease-in-out bg-gradient-to-b from-white to-[#DDEFFD]">
+                <img src={Battery_swapping_info} alt="" className=""/>
+            </div>
             {/* Section 3 - Show case Bikes */}
-            
             <div className="mr-auto ml-auto flex flex-col md:flex-row items-center py-5 gap-3 justify-center">
                 <div className="flex flex-col gap-4">
                    <div className="px-9 py-4 text-center lg:text-left">
-                      <h1 className="text-2xl md:text-3xl font-semibold">Elthor: Ride the Future</h1>
+                      <h1 className="text-2xl md:text-3xl font-semibold">Swappable Battery Models</h1>
+                   </div>
+                   <div className="flex flex-wrap justify-center gap-4 px-5 md:[&>*]:w-[48%] lg:[&>*]:w-auto">
+                       {
+                         Swapping_Bike_models.map((bike, index)=>(
+                            <Bike_model_card index={index} model_1={bike.Model_image} model_title={bike.Model_name}
+                                             Subtitle={bike.Model_description} price={bike.Model_price} EmiPrice={bike.Model_price_2}/>  
+                         ))
+                       }    
+                   </div>
+                   <div className="px-9 py-4 text-center lg:text-left">
+                      <h1 className="text-2xl md:text-3xl font-semibold">Standard Charge Models</h1>
                    </div>
                    <div className="flex flex-wrap justify-center gap-4 px-5 md:[&>*]:w-[48%] lg:[&>*]:w-auto">
                        {
@@ -208,7 +251,7 @@ const Home = () => {
                          ))
                        }    
                    </div>
-                   <div className="py-5 px-7">
+                   <div className="py-5 px-4">
                        <div className="h-[450px] border border-[#E0E7ED] rounded-3xl overflow-hidden relative">
                           <img src={Long_Banner} alt="Long_Banner" className="w-full h-full object-cover"/>
                           <img src={Group_of_bike} alt="Group_of_bike" className="absolute bottom-0 right-0 md:-right-14 md:w-[75%] md:h-[75%] lg:w-[85%] lg:h-[85%]" />
@@ -217,7 +260,7 @@ const Home = () => {
                             <h1 className="text-[#606568] text-sm md:text-lg px-1">Begins at ₹1,54,999</h1>
                             <h1 className="text-[#606568] text-sm md:text-lg px-1">or Easy FlexiPay ₹5,185/month</h1>
                             <div className="py-2 md:py-3 flex items-center justify-center px-1 md:justify-start gap-2">
-                                <button className="py-2 px-5 bg-black rounded-xl text-white text-sm cursor-pointer hover:scale-105">Book Now</button>
+                                {/* <button className="py-2 px-5 bg-black rounded-xl text-white text-sm cursor-pointer hover:scale-105">Book Now</button> */}
                                 <button  className="py-2 px-5 bg-[#D7D7D7] rounded-xl cursor-pointer hover:scale-105">Explore</button>
                             </div>
                           </div>
@@ -230,7 +273,7 @@ const Home = () => {
                       <h1 className="text-4xl md:text-5xl font-semibold">Elthor Grid</h1>
                       <h1 className="text-lg md:text-xl py-1 text-[#606568]">Smart. Fast. Reliable.</h1>
                    </div>
-                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-3 lg:gap-2 px-5">
+                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-3 lg:gap-2 px-4">
                        <Grid_feature image={Ev_battery_Station} title="Swap. Charge. Go!" subtitle="Fast, eco-friendly battery swapping for your e-bike" link="/Swapping-station"/>
                        <Grid_feature image={Mobile_app_} title="Smart Bike" subtitle="Control, Track & Swap—All from Your Mobile!"/>
                        <Grid_feature image={Bike_background_Studio_Plain} overlayImage={Maintance_bike}  title="Fast Service!" subtitle="Bike Service—Get Back on the Road in Minutes!"/>

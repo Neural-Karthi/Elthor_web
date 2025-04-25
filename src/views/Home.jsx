@@ -8,10 +8,6 @@ import Right_arrow from '../assets/Images/Right_arrow.svg'
 import { useSwipeable } from 'react-swipeable';
 
 import Bike_background_Studio_Plain from '../assets/Images/Bike_background_Studio_Plain.svg'
-import model_1 from '../assets/Images/Model_1.svg'
-import model_2 from '../assets/Images/Model_2.svg'
-import model_3 from '../assets/Images/Model_3.svg'
-
 import Bike_model_card from '../Components/Bike_model_card.jsx'
 import Long_Banner from '../assets/Images/Long_Banner.svg'
 import Group_of_bike from '../assets/Images/Group_of_bike.svg'
@@ -46,6 +42,7 @@ import Standand_Bike_3 from '../assets/Images/Standand_Bike_3.svg'
 import swappable_b1 from '../assets/Images/Swappable_b1.svg'
 import swappable_b2 from '../assets/Images/Swappable_b2.svg'
 import swappable_b3 from '../assets/Images/Swappable_b3.svg'
+
 const Home = () => {
    
     const [Scrolling_position,set_Scrollingposition] = useState(0);
@@ -124,21 +121,24 @@ const Home = () => {
           Model_description:"Energy that moves with you",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:swappable_b2
+          Model_image:swappable_b2,
+          link :"/Bikemodel/Elthor_VoltX"
         },
         {
           Model_name:"Elthor Pulse",
           Model_description:"FNext-gen power exchange",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:swappable_b1
+          Model_image:swappable_b1,
+          link :"/Bikemodel/Elthor_Pulse"
         },
         {
           Model_name:"Elthor Dynamo",
           Model_description:" Swap and surge.",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:swappable_b3
+          Model_image:swappable_b3,
+          link :"/Bikemodel/Elthor_Dynamo"
         }
       ]
 
@@ -148,21 +148,24 @@ const Home = () => {
           Model_description:"Pure, solid performance.",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:Standand_Bike_1
+          Model_image:Standand_Bike_1,
+          link :"/Bikemodel/Elthor_Core"
         },
         {
           Model_name:"Elthor Drift",
           Model_description:"Smooth rides, no stops.",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:Standand_Bike_2
+          Model_image:Standand_Bike_2,
+          link :"/Bikemodel/Elthor_Drift"
         },
         {
           Model_name:"Elthor Vibe ",
           Model_description:"Charged for everyday rides",
           Model_price:"Begins at ₹1,54,999",
           Model_price_2:"or Easy FlexiPay ₹5,185/month",
-          Model_image:Standand_Bike_3
+          Model_image:Standand_Bike_3,
+          link :"/Bikemodel/Elthor_Vibe"
         }
       ]
       
@@ -220,11 +223,11 @@ const Home = () => {
 
             {/* Section 2 - Elthor Swapping Information */}
             <div className="text-center py-6 pt-16 md:pt-24 pb-5 px-4">
-               <div><h1 className="text-xl md:text-3xl font-semibold">Swap. Snap. Go.</h1></div>
+               <div><h1 className="text-2xl md:text-3xl font-semibold">Swap. Snap. Go.</h1></div>
                <div className="py-2 md:py-3 md:w-[60%] lg:w-[45%] 2xl:w-[35%] text-center  mr-auto ml-auto text-[#606568] text-[14px] md:text-[18px] lg:text-lg"><h1>Elthor makes battery swapping effortless. Cleaner than fuel. Quicker than charging. Just swap and go — no lines, no delays, no emissions. Power that's ready when you are. Ride on without stopping.</h1></div>
             </div>
-            <div className="flex items-center justify-center p-5 md:p-8 relative transition-transform duration-300 ease-in-out bg-gradient-to-b from-white to-[#DDEFFD]">
-                <img src={Battery_swapping_info} alt="" className=""/>
+            <div className="flex items-center justify-center p-5 md:p-8 relative transition-transform duration-300 ease-in-out bg-gradient-to-b from-white to-[#C4FFE7]">
+                <img src={Battery_swapping_info} alt="" className="w-[80%] md:w-auto"/>
             </div>
             {/* Section 3 - Show case Bikes */}
             <div className="mr-auto ml-auto flex flex-col md:flex-row items-center py-5 gap-3 justify-center">
@@ -236,7 +239,7 @@ const Home = () => {
                        {
                          Swapping_Bike_models.map((bike, index)=>(
                             <Bike_model_card index={index} model_1={bike.Model_image} model_title={bike.Model_name}
-                                             Subtitle={bike.Model_description} price={bike.Model_price} EmiPrice={bike.Model_price_2}/>  
+                                             Subtitle={bike.Model_description} price={bike.Model_price} EmiPrice={bike.Model_price_2} pathlink={bike.link}/>  
                          ))
                        }    
                    </div>
@@ -247,7 +250,7 @@ const Home = () => {
                        {
                          Bike_models.map((bike, index)=>(
                             <Bike_model_card index={index} model_1={bike.Model_image} model_title={bike.Model_name}
-                                             Subtitle={bike.Model_description} price={bike.Model_price} EmiPrice={bike.Model_price_2}/>  
+                                             Subtitle={bike.Model_description} price={bike.Model_price} EmiPrice={bike.Model_price_2} pathlink={bike.link}/>  
                          ))
                        }    
                    </div>
@@ -265,9 +268,9 @@ const Home = () => {
                             </div>
                           </div>
                        </div>
-                       <div className="py-5 w-full">
+                       {/* <div className="py-5 w-full">
                            <button className="flex ml-auto items-center text-lg py-2 cursor-pointer justify-center text-[#606568] rounded-xl w-full md:w-auto px-6 bg-[#F7F8F6] ">More <img src={Long_arrow} alt="" className="w-26"/></button>
-                       </div>
+                       </div> */}
                    </div>
                    <div className="px-9 py-4 text-center">
                       <h1 className="text-4xl md:text-5xl font-semibold">Elthor Grid</h1>
@@ -302,9 +305,9 @@ const Home = () => {
                           </div>
                         </div>
                    </div>
-                   <div className="py-5 w-full">
+                   {/* <div className="py-5 w-full">
                            <button className="flex ml-auto items-center text-lg py-2 cursor-pointer justify-center text-[#606568] rounded-xl w-full md:w-auto px-6 bg-[#F7F8F6] ">More <img src={Long_arrow} alt="" className="w-26"/></button>
-                   </div>
+                   </div> */}
                 </div>
 
                 {/* Getinto touch banner */}

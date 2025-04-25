@@ -1,7 +1,8 @@
 import React from 'react'
 import Bike_background_Studio_Plain from '../assets/Images/Bike_background_Studio_Plain.svg'
-
+import { useNavigate } from 'react-router-dom';
 const Bike_model_card = (props) => {
+   const navigate = useNavigate();
   return (
      <div className="w-full max-w-[370px] rounded-3xl bg-[#FAFCFC] border border-[#E0E7ED] overflow-hidden"> 
          <div className="w-full h-[50%] relative hover:scale-105 transition duration-100 cursor-pointer">
@@ -16,7 +17,7 @@ const Bike_model_card = (props) => {
            <h1 className="text-[#606568] text-sm">{props.price}</h1>
            <h1 className="text-[#606568] text-sm">{props.EmiPrice}</h1>
            <div className="w-full py-5">
-              <button className="w-full py-4 bg-black rounded-xl text-white cursor-pointer text-sm md:text-lg">Know more</button>
+              <button className="w-full py-4 bg-black rounded-xl text-white cursor-pointer text-sm md:text-lg" onClick={()=>{navigate(props.pathlink);window.scrollTo(0, 0);}}>Know more</button>
            </div>
          </div>
      </div>

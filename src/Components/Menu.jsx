@@ -5,8 +5,9 @@ import menu_bike_2 from '../assets/Images/menu_bike_2.svg'
 import menu_bike_3 from '../assets/Images/menu_bike_3.svg'
 import menu_bike_4 from '../assets/Images/menu_bike_4.svg'
 import menu_bike_5 from '../assets/Images/menu_bike_5.svg'
-
+import { useNavigate } from 'react-router-dom';
 const Menu = (props) => {
+    const navigate = useNavigate();
     const bikeData = [
         { src: menu_bike_1, name: 'Elthor Bravo B1' },
         { src: menu_bike_2, name: 'Elthor Bravo B2' },
@@ -30,7 +31,7 @@ const Menu = (props) => {
                 {chunkedBikes.map((group, i) => (
                   <div key={i} className="py-5 md:px-8 flex items-center gap-3">
                     {group.map((bike, j) => (
-                      <div key={j} className="w-1/3 flex flex-col items-center justify-center">
+                      <div key={j} className="w-1/3 flex flex-col items-center justify-center" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>
                         <img
                            src={`${bike.src}?v=1.0`}
                           loading="lazy"
@@ -47,10 +48,10 @@ const Menu = (props) => {
                        <div className=" h-full ">
                           <h1 className="text-[15px] md:text-[14px] 2xl:text-lg text-[#A1A8AF] py-2 ">Elthor</h1>
                           <div className="text-sm flex flex-col gap-1 md:text-[14px] 2xl:text-lg text-[#000000]">
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer">Elthor Bravo</h1>
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer">Elthor Coral</h1>
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer">Elthor H7</h1>
-                             <h1 className="hover:text-[#A1A8AF] cursor-pointer">Elthor Mini Cooper</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor Bravo</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor Coral</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor H7</h1>
+                             <h1 className="hover:text-[#A1A8AF] cursor-pointer" onClick={()=>{navigate("/Bikemodel/Elthor_Dynamo");window.scrollTo(0, 0);}}>Elthor Mini Cooper</h1>
                           </div>
                       </div>
                      </div>

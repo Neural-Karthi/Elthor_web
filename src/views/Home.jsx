@@ -43,9 +43,9 @@ import Standand_Bike_1 from '../assets/Images/Standand_Bike_1.svg'
 import Standand_Bike_2 from '../assets/Images/Standand_Bike_2.svg'
 import Standand_Bike_3 from '../assets/Images/Standand_Bike_3.svg'
 
-import swappable_b1 from '../assets/Images/Swappable_b1.SVG'
-import swappable_b2 from '../assets/Images/Swappable_b2.SVG'
-import swappable_b3 from '../assets/Images/Swappable_b3.SVG'
+import swappable_b1 from '../assets/Images/Swappable_b1.svg'
+import swappable_b2 from '../assets/Images/Swappable_b2.svg'
+import swappable_b3 from '../assets/Images/Swappable_b3.svg'
 const Home = () => {
    
     const [Scrolling_position,set_Scrollingposition] = useState(0);
